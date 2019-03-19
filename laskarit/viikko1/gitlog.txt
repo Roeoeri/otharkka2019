@@ -1,3 +1,4 @@
+Logi:
 commit e258abfcd9e04a3d72a0c29754a2bdbb270a0719 
 Author: tomih <tomi.haapakoski@helsinki.fi> 
 Date:   Tue Mar 19 17:26:19 2019 +0200 
