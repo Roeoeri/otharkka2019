@@ -1,0 +1,122 @@
+commit e258abfcd9e04a3d72a0c29754a2bdbb270a0719 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 17:26:19 2019 +0200 
+
+   file1 poistettu 
+
+tiedostoja/file1.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit 79d40813c7fadbb1e4b92f1fa1f60e0c8cd6ffd1 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 17:25:43 2019 +0200 
+
+   file2 nimetetty -> file22 
+
+tiedostoja/{file2.txt => file22.txt} | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit 71f0ce0e424e00206c3691bec8919e09db81b532 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 17:02:57 2019 +0200 
+
+   tiedostoja-kansio lisätty 
+
+tiedostoja/file1.txt | 0 
+tiedostoja/file2.txt | 0 
+tiedostoja/file3.txt | 0 
+3 files changed, 0 insertions(+), 0 deletions(-) 
+
+commit 1d7d8b35ab41fc9f2adb6b263dd1f586cd44a43b 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:56:33 2019 +0200 
+
+   ekaa ja kolmatta muutettu 
+
+eka.txt    | 7 +++++++ 
+kolmas.txt | 2 +- 
+2 files changed, 8 insertions(+), 1 deletion(-) 
+
+commit cb530f1870b58227057b997f956a95d9a1b63c20 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:53:27 2019 +0200 
+
+   tiedoston nimeä muutettu 
+
+tiedosto.txt => eka.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit 726fd779f894e613af95df643758d2647f97b9af 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:51:51 2019 +0200 
+
+   toinen poistettu 
+
+toinen.txt | 1 - 
+1 file changed, 1 deletion(-) 
+
+commit d1584e734f55b56428b7bad985aed1e2d5e20461 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:49:49 2019 +0200 
+
+   Tiedosta muutettu taas 
+
+tiedosto.txt | 11 ++++++++++- 
+1 file changed, 10 insertions(+), 1 deletion(-) 
+
+commit 954d09680df1d2acb2d5f86656fe9b48e4f851d8 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:48:23 2019 +0200 
+
+   tiedostoa muutettu 
+
+tiedosto.txt | 11 ++++++++++- 
+1 file changed, 10 insertions(+), 1 deletion(-) 
+
+commit 289e6905ee9f92207c5ba559a1fece6dffdba395 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:43:21 2019 +0200 
+
+   hakemisto stuff ja tiedosto lisätty 
+
+stuff/stuffintiedosto.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit 6436017bdaf1ed78ee945f7782b99fa845ecc087 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:42:01 2019 +0200 
+
+   toista ja kolmatta muutettu 
+
+kolmas.txt | 1 + 
+toinen.txt | 1 + 
+2 files changed, 2 insertions(+) 
+
+commit 8670a38c1cb87dad34e123b95d0ee68f1602e577 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:40:34 2019 +0200 
+
+   kolmas lisätty 
+
+kolmas.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit f0c31068ec7bc54d209d3106f0c93e256b63d38e 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:38:15 2019 +0200 
+
+   muutos ja lisäys 
+
+tiedosto.txt | 1 + 
+toinen.txt   | 0 
+2 files changed, 1 insertion(+) 
+
+commit 00737ca41938fa4f97dc49a899fed0199272276f 
+Author: tomih <tomi.haapakoski@helsinki.fi> 
+Date:   Tue Mar 19 16:36:23 2019 +0200 
+
+   tiedosto.txt luotu 
+
+tiedosto.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-)
+
