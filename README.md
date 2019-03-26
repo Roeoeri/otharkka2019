@@ -12,5 +12,9 @@
   ## Dokumentaatio <h2>
   
   [Vaativuusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
+  
+  ## Tuntikirjanpito <h2>
+  
+  [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
 
 
