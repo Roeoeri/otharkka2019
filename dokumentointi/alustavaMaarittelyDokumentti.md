@@ -26,7 +26,7 @@ Sovelluksessa on vain yksi käyttäjärooli: normaali käyttäjä.
 - Kirjautumisen jälkeen käyttäjälle tarjotaan kaksi erilaista sudokua: helppo ja vaikea. 
 - Helpossa sudokussa on huomattavasti enemmän valmiiksi täytettyjä ruutuja kuin vaikeassa.
 - Helpolle ja vaikealle sudokulle on erikseen omat pistelistansa. 
-- Jos käyttäjä ei keksi sudokulle ratkaisua, hänelle tarjotaan mahdollisuus "luovuttaa" ja sovellus näyttää käyttäjälle sudokun ratkaisun.
+- Jos käyttäjä ei keksi sudokulle ratkaisua, hänelle tarjotaan mahdollisuus luovuttaa. Mikäli käyttäjä luovuttaa, sovellus näyttää käyttäjälle sudokun ratkaisun.
 
 
 
