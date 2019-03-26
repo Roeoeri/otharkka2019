@@ -7,5 +7,10 @@
   
 ### Viikko2 <h3>
   [Testikattavuus](https://github.com/Roeoeri/otharkka2019/blob/master/laskarit/viikko2/Testikattavuus.png)
+  
+  
+  ## Dokumentaatio <h2>
+  
+  [Vaativuusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
 
 
