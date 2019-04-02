@@ -2,7 +2,7 @@
 
   ## Dokumentaatio <h2>
   
-  [Vaativuusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
+  [Vaatimusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
   
   ## Tuntikirjanpito <h2>
   
