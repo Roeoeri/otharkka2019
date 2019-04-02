@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package sudokupeli.domain;
 
 import java.io.File;
 import java.io.FileWriter;
