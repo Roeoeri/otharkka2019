@@ -1,4 +1,4 @@
-# Vaativuusmäärittely <h1>
+# Vaatimusmäärittely <h1>
 
 ## Sovelluksen Tarkoitus <h2>
 Työn tarkoituksena on luoda sovellus, jossa käyttäjät voivat pelata sudokua. Käyttäjiä voi olla useita ja heistä jokainen voi luoda nimimerkin sovellukseen pistelistojen tallentamista varten. Kuitenkin jokainen käyttäjä kuuluu samaan käyttäjäryhmään ja heillä on samat käyttäjäoikeudet.
