@@ -39,7 +39,7 @@ public class SudokuUi extends Application {
         loginGroup.setVgap(20);
         loginGroup.setPadding(new Insets(20, 20, 20, 20));
 
-        Scene LoginView = new Scene(loginGroup);
+        Scene loginView = new Scene(loginGroup);
 
         Label placeholder = new Label("Sudoku ilmestyy tänne");
 
@@ -70,20 +70,20 @@ public class SudokuUi extends Application {
                 Button tile = new Button(" ");
                 tile.setFont(Font.font("Monospaced", 40));
                 tile.setUserData(Color.RED);
-                tile.setOnAction((event) ->{
-                    int yCoordinate = GridPane.getRowIndex(tile) -1;
-                    int xCoordinate = GridPane.getColumnIndex(tile) -1;
-                    if(sudoku.numberCanBeChanged(xCoordinate, yCoordinate)){
+                tile.setOnAction((event) -> {
+                    int yCoordinate = GridPane.getRowIndex(tile) - 1;
+                    int xCoordinate = GridPane.getColumnIndex(tile) - 1;
+                    if (sudoku.numberCanBeChanged(xCoordinate, yCoordinate)) {
                         int value = sudoku.raiseTileValue(xCoordinate, yCoordinate);
                         tile.setText("" + value);
                     }
-                 
+
                 });
-                int value = sudoku.getTileValue(x-1, y-1);
+                int value = sudoku.getTileValue(x - 1, y - 1);
                 if (value == 0) {
                     tile.setText(" ");
                 } else {
-                    tile.setText(""+ value);
+                    tile.setText("" + value);
                     tile.setStyle("-fx-text-fill: red;");
                 }
                 tiles.add(tile, x, y);
@@ -92,21 +92,21 @@ public class SudokuUi extends Application {
         }
 
         sudokuGroup.setCenter(tiles);
-        
+
         Button checkAnswer = new Button("Tarkista");
         sudokuGroup.setBottom(checkAnswer);
-        
-        checkAnswer.setOnAction((event) ->{
+
+        checkAnswer.setOnAction((event) -> {
             final boolean isCorrect = sudoku.solutionIsCorrect();
-            if(isCorrect){
+            if (isCorrect) {
                 placeholder.setText("Oikein, peli päättyy");
-            }else{
+            } else {
                 placeholder.setText("Väärin, yritä uudestaan");
             }
-        
+
         });
 
-        window.setScene(LoginView);
+        window.setScene(loginView);
         window.show();
 
     }

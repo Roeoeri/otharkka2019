@@ -15,30 +15,30 @@ import sudokupeli.dao.FileHighScoreDao;
  * @author htomi
  */
 public class HighscoreList {
-    
+
     private List<Player> highscore;
     private FileHighScoreDao scoreDao;
-    
-    public HighscoreList(FileHighScoreDao dao) throws Exception{
+
+    public HighscoreList(FileHighScoreDao dao) throws Exception {
         this.scoreDao = dao;
         this.highscore = scoreDao.getAll();
     }
-    
-    public void addPlayer(Player player) throws Exception{
+
+    public void addPlayer(Player player) throws Exception {
         scoreDao.add(player);
         updateRanking();
     }
-    
-    public List<Player> asList(){
+
+    public List<Player> asList() {
         return this.highscore;
     }
-    
-    public Player getPlayer(String name){
+
+    public Player getPlayer(String name) {
         return scoreDao.getPlayer(name);
     }
-    
-    public void updateRanking(){
+
+    public void updateRanking() {
         this.highscore = scoreDao.getAll();
     }
-    
+
 }

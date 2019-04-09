@@ -9,42 +9,41 @@ package sudokupeli.domain;
  *
  * @author htomi
  */
-public class Player implements Comparable<Player>{
-    
+public class Player implements Comparable<Player> {
+
     private String name;
     private int fastestTime;
-    
-    public Player(String name){
+
+    public Player(String name) {
         this.name = name;
         this.fastestTime = Integer.MAX_VALUE;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
-    
-    public int getFastestTime(){
+
+    public int getFastestTime() {
         return this.fastestTime;
     }
-    
-    public void setTime(int time){
-        if(time < this.fastestTime && time >= 0){
-             this.fastestTime = time;
+
+    public void setTime(int time) {
+        if (time < this.fastestTime && time >= 0) {
+            this.fastestTime = time;
         }
-        
+
     }
-    
-    
+
     @Override
-    public int compareTo(Player player){
-        if(this.fastestTime < player.getFastestTime()){
+    public int compareTo(Player player) {
+        if (this.fastestTime < player.getFastestTime()) {
             return -1;
         }
-         if(this.fastestTime> player.getFastestTime()){
+        if (this.fastestTime > player.getFastestTime()) {
             return 1;
         }
         return 0;
-        
+
     }
-    
+
 }
