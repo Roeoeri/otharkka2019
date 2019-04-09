@@ -5,8 +5,12 @@
   
   [Vaatimusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
   
-  ## Tuntikirjanpito <h2>
+  [Arkkitehtuurikuvaus](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/arkkitehtuuri.md)
   
   [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
+  
+  
+  
+  
 
 
