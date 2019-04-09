@@ -8,8 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import sudokupeli.domain.Player;
 
@@ -40,10 +43,9 @@ public class SudokuUi extends Application {
 
         Label placeholder = new Label("Sudoku ilmestyy tänne");
 
-        StackPane sudokuGroup = new StackPane();
-        sudokuGroup.setPrefSize(600, 600);
-        sudokuGroup.getChildren().add(placeholder);
-        sudokuGroup.setAlignment(Pos.CENTER);
+        BorderPane sudokuGroup = new BorderPane();
+        sudokuGroup.setTop(placeholder);
+        
 
         Scene sudokuView = new Scene(sudokuGroup);
 
@@ -59,6 +61,18 @@ public class SudokuUi extends Application {
             placeholder.setText(this.currentPlayer.getName() + ", sudokusi illmestyy tänne");
             window.setScene(sudokuView);
         });
+        
+        GridPane tiles = new GridPane();
+        for(int x = 1; x<=9; x++){
+            for(int y = 1; y<=9; y++){
+                Button tile = new Button(" ");
+                tile.setFont(Font.font("Monospaced",40));
+                tiles.add(tile, x, y);
+                
+            }
+        }
+        
+        sudokuGroup.setCenter(tiles);
 
         window.setScene(LoginView);
         window.show();
