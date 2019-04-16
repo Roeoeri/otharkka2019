@@ -9,6 +9,9 @@
   
   [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
   
+  ## Releaset <h2>
+  [Viikko5](https://github.com/Roeoeri/otharkka2019/releases)
+  
   
   
   
