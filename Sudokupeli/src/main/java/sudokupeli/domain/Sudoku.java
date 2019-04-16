@@ -15,7 +15,7 @@ public class Sudoku {
 
     private int[][] sudokuGrid;
     private boolean[][] changeableNumbers = new boolean[9][9];
-    public Random rng = new Random();
+    private Random rng = new Random();
 
     public boolean solutionIsCorrect() {
         for (int x = 0; x < 9; x++) {
