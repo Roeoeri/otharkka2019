@@ -16,8 +16,8 @@ public class Sudoku {
     private int[][] sudokuGrid;
     private boolean[][] changeableNumbers = new boolean[9][9];
     private Random rng = new Random();
-    
-    public Sudoku(){
+
+    public Sudoku() {
         this.sudokuGrid = new int[9][9];
     }
 
@@ -162,8 +162,8 @@ public class Sudoku {
     public int[][] getSudoku() {
         return this.sudokuGrid;
     }
-    
-    public void setSudoku(int[][] sudoku){
+
+    public void setSudoku(int[][] sudoku) {
         this.sudokuGrid = sudoku;
     }
 
