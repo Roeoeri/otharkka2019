@@ -1,6 +1,7 @@
 package sudokupeli.ui;
 
 import java.awt.Color;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.geometry.Insets;
@@ -14,11 +15,13 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sudokupeli.domain.Player;
 import sudokupeli.domain.Sudoku;
+import org.apache.commons.lang3.time.StopWatch;
 
 public class SudokuUi extends Application {
 
     Player currentPlayer;
     Sudoku sudoku;
+    StopWatch clock;
 
     @Override
     public void start(Stage window) {
@@ -39,6 +42,8 @@ public class SudokuUi extends Application {
         loginGroup.setVgap(20);
         loginGroup.setPadding(new Insets(20, 20, 20, 20));
 
+        clock = new StopWatch();
+
         Scene loginView = new Scene(loginGroup);
 
         Label placeholder = new Label("Sudoku ilmestyy tänne");
@@ -58,7 +63,23 @@ public class SudokuUi extends Application {
             Player player = new Player(username);
             this.currentPlayer = player;
             placeholder.setText("Pelaaja: " + this.currentPlayer.getName());
+
             window.setScene(sudokuView);
+
+            clock.start();
+            new AnimationTimer() {
+                long previous = 0;
+
+                @Override
+                public void handle(long current) {
+                    if (current - previous < 1000000000) {
+                        return;
+                    }
+                    placeholder.setText(currentPlayer.getName() + ", olet käyttänyt " + clock.getTime() / 1000 + " sekuntia sudokun ratkaisemiseen");
+
+                    this.previous = current;
+                }
+            }.start();
         });
 
         this.sudoku = new Sudoku();
