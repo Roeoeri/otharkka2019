@@ -33,7 +33,7 @@ public class SudokuUi extends Application {
     HighscoreList highscores;
 
     public SudokuUi() throws Exception {
-        this.dao = new FileHighScoreDao("HighScoreListTest.txt");
+        this.dao = new FileHighScoreDao("highscores.txt");
         highscores = new HighscoreList(dao);
     }
 
