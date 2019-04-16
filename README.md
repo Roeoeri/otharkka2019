@@ -16,13 +16,13 @@
   ### Testaus <h3>
   Testien ajaminen onnistuu komennolla:`mvn test`
   
-  Testikattavuusraportin generointi onnistuu komennolla: `mvn jacoco:report`, jonka jälkeen raportti löytyy hakemistosta target/site/jacoco/index.html.
+  Testikattavuusraportin generointi onnistuu komennolla: `mvn jacoco:report`, jonka jälkeen raportti löytyy polusta target/site/jacoco/index.html.
   
   ### Suoritettava Jar <h3>
-  Jar luodaan komennolla `mvn package`, jonka jälkeen jar löytyy hakemistosta /target/Sudokupeli-1.0-SNAPSHOT-shaded.jar
+  Jar luodaan komennolla `mvn package`, jonka jälkeen jar löytyy polusta /target/Sudokupeli-1.0-SNAPSHOT-shaded.jar
   
   ### CheckStyle <h3>
-  Checkstyleraportti saadaan komennolla ` mvn jxr:jxr checkstyle:checkstyle`, jonka jälkeen raportti on hakemistossa target/site/checkstyle.html
+  Checkstyleraportti saadaan komennolla ` mvn jxr:jxr checkstyle:checkstyle`, jonka jälkeen raportti on polulla target/site/checkstyle.html
 
   
   
