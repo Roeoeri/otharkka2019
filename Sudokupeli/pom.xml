@@ -32,7 +32,7 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>sudokupeli/ui/SudokuUi</exclude>
+                        <exclude>sudokupeli/ui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
