@@ -60,10 +60,10 @@ public class SudokuUi extends Application {
 
         Scene loginView = new Scene(loginGroup);
 
-        Label placeholder = new Label("Sudoku ilmestyy tänne");
+        Label playerInfo = new Label("Sudoku ilmestyy tänne");
 
         BorderPane sudokuGroup = new BorderPane();
-        sudokuGroup.setTop(placeholder);
+        sudokuGroup.setTop(playerInfo);
 
         Scene sudokuView = new Scene(sudokuGroup);
 
@@ -74,9 +74,7 @@ public class SudokuUi extends Application {
                 invalidUsernameLabel.setText("Käyttäjätunnuksen pitää olla 1-8 merkkiä");
                 return;
             }
-            Player player = new Player(username);
-            this.currentPlayer = player;
-            placeholder.setText("Pelaaja: " + this.currentPlayer.getName());
+            this.currentPlayer = new Player(username);
 
             window.setScene(sudokuView);
 
@@ -89,7 +87,7 @@ public class SudokuUi extends Application {
                     if (current - previous < 1000000000) {
                         return;
                     }
-                    placeholder.setText(currentPlayer.getName() + ", olet käyttänyt " + clock.getTime() / 1000 + " sekuntia sudokun ratkaisemiseen");
+                    playerInfo.setText(currentPlayer.getName() + ", olet käyttänyt " + clock.getTime() / 1000 + " sekuntia sudokun ratkaisemiseen");
 
                     this.previous = current;
                 }
@@ -153,9 +151,9 @@ public class SudokuUi extends Application {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-                placeholder.setText("Oikein, peli päättyy");
+                playerInfo.setText("Oikein, peli päättyy");
             } else {
-                placeholder.setText("Väärin, yritä uudestaan");
+                playerInfo.setText("Väärin, yritä uudestaan");
             }
 
         });
