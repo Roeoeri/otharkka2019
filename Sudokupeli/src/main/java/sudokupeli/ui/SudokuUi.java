@@ -69,7 +69,6 @@ public class SudokuUi extends Application {
             for (int y = 1; y <= 9; y++) {
                 Button tile = new Button(" ");
                 tile.setFont(Font.font("Monospaced", 40));
-                tile.setUserData(Color.RED);
                 tile.setOnAction((event) -> {
                     int yCoordinate = GridPane.getRowIndex(tile) - 1;
                     int xCoordinate = GridPane.getColumnIndex(tile) - 1;
