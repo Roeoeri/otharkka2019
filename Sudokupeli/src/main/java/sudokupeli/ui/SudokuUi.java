@@ -1,6 +1,9 @@
 package sudokupeli.ui;
 
 import java.awt.Color;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -11,17 +14,28 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sudokupeli.domain.Player;
 import sudokupeli.domain.Sudoku;
 import org.apache.commons.lang3.time.StopWatch;
+import sudokupeli.dao.FileHighScoreDao;
+import sudokupeli.domain.HighscoreList;
 
 public class SudokuUi extends Application {
 
     Player currentPlayer;
     Sudoku sudoku;
     StopWatch clock;
+    AnimationTimer userTimeAnimator;
+    FileHighScoreDao dao;
+    HighscoreList highscores;
+
+    public SudokuUi() throws Exception {
+        this.dao = new FileHighScoreDao("HighScoreListTest.txt");
+        highscores = new HighscoreList(dao);
+    }
 
     @Override
     public void start(Stage window) {
@@ -67,7 +81,7 @@ public class SudokuUi extends Application {
             window.setScene(sudokuView);
 
             clock.start();
-            new AnimationTimer() {
+            userTimeAnimator = new AnimationTimer() {
                 long previous = 0;
 
                 @Override
@@ -79,7 +93,9 @@ public class SudokuUi extends Application {
 
                     this.previous = current;
                 }
-            }.start();
+            };
+            userTimeAnimator.start();
+
         });
 
         this.sudoku = new Sudoku();
@@ -113,12 +129,30 @@ public class SudokuUi extends Application {
 
         sudokuGroup.setCenter(tiles);
 
+        VBox highScoreGroup = new VBox();
+        highScoreGroup.getChildren().add(new Label("Pelaajat jotka ovat ratkaisseet sudokun nopeimmin: "));
+        List<Player> players = this.highscores.asList();
+        for (int i = 0; i < players.size(); i++) {
+            highScoreGroup.getChildren().add(new Label(players.get(i).getName() + " ajalla " + players.get(i).getFastestTime() + " sekuntia"));
+        }
+
+        sudokuGroup.setRight(highScoreGroup);
+
         Button checkAnswer = new Button("Tarkista");
         sudokuGroup.setBottom(checkAnswer);
 
         checkAnswer.setOnAction((event) -> {
             final boolean isCorrect = sudoku.solutionIsCorrect();
             if (isCorrect) {
+                userTimeAnimator.stop();
+                int time = (int) clock.getTime() / 1000;
+                clock.stop();
+                currentPlayer.setTime(time);
+                try {
+                    this.highscores.addPlayer(currentPlayer);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
                 placeholder.setText("Oikein, peli päättyy");
             } else {
                 placeholder.setText("Väärin, yritä uudestaan");
