@@ -27,6 +27,9 @@
   
   ### CheckStyle <h3>
   Checkstyleraportti saadaan komennolla ` mvn jxr:jxr checkstyle:checkstyle`, jonka jälkeen raportti on polulla target/site/checkstyle.html.
+  
+  ### JavaDoc <h3>
+ Javadoc luodaan komennolla `mvn javadoc:javadoc` Tämän jälkeen javadoc on avattavissa polulla target/site/apidocs/index.html
 
   
   
