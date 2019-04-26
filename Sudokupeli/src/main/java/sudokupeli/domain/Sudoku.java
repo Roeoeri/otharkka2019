@@ -5,7 +5,6 @@
  */
 package sudokupeli.domain;
 
-
 /**
  *
  * @author htomi
@@ -31,7 +30,6 @@ public class Sudoku {
                 if (!numberCanBePlaced(x, y, value)) {
                     sudokuGrid[x][y] = value;
                     return false;
-
                 }
                 sudokuGrid[x][y] = value;
             }
@@ -41,30 +39,51 @@ public class Sudoku {
 
     public boolean numberCanBePlaced(int x, int y, int value) {
 
-        for (int i = 0; i < 9; i++) {
-            if (sudokuGrid[x][i] == value) {
-                return false;
-            }
+        if (rowHasANumber(x, value)) {
+            return false;
         }
-        for (int i = 0; i < 9; i++) {
-            if (sudokuGrid[i][y] == value) {
-                return false;
-            }
+
+        if (columnHasANumber(y, value)) {
+            return false;
         }
+
+        if (boxHasANumber(x, y, value)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean boxHasANumber(int x, int y, int value) {
         int squareXLimit = 3 * Math.floorDiv(x, 3);
         int squareYLimit = 3 * Math.floorDiv(y, 3);
 
         for (int i = squareXLimit; i < squareXLimit + 3; i++) {
             for (int j = squareYLimit; j < squareYLimit + 3; j++) {
                 if (sudokuGrid[i][j] == value) {
-                    return false;
+                    return true;
                 }
             }
-
         }
+        return false;
+    }
 
-        return true;
+    public boolean rowHasANumber(int x, int value) {
+        for (int i = 0; i < 9; i++) {
+            if (sudokuGrid[x][i] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public boolean columnHasANumber(int y, int value) {
+        for (int i = 0; i < 9; i++) {
+            if (sudokuGrid[i][y] == value) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int[] getEmptyTile() {
@@ -78,10 +97,11 @@ public class Sudoku {
                 }
             }
         }
+
         coordinates[0] = -99;
         coordinates[1] = -99;
-        return coordinates;
 
+        return coordinates;
     }
 
     public int getTileValue(int x, int y) {
@@ -98,6 +118,7 @@ public class Sudoku {
             sudokuGrid[x][y] = value;
             return value;
         }
+
         return sudokuGrid[x][y];
     }
 
@@ -107,7 +128,9 @@ public class Sudoku {
 
     public void initializeSudoku() {
         sudokuGrid = new int[9][9];
+
         fillTiles();
+
         for (int i = 0; i < 40; i++) {
             int x = rng.getRandomNumber();
             int y = rng.getRandomNumber();
@@ -120,7 +143,6 @@ public class Sudoku {
         int[] coordinates = getEmptyTile();
         int x = coordinates[0];
         int y = coordinates[1];
-
         int[] randomNumbers = rng.getRandomNumbers();
 
         if (x == -99) {
@@ -135,13 +157,11 @@ public class Sudoku {
                     return true;
                 }
                 sudokuGrid[x][y] = 0;
-
             }
-
         }
+
         return false;
     }
-
 
     public int[][] getSudoku() {
         return this.sudokuGrid;
