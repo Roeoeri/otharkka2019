@@ -7,4 +7,4 @@ Päivä | Aika | Mitä tein
 9.4  | 6 | Sudokua kuvaava luokka toteutettu. Lisätty käyttöliittymään näkymä sudokulle. Checkstyle otettu käyttöön. Lisätty arkkitehtuuridokumentti ja alustava luokkakaavio.
 16.4 | 8 | Käyttöliittymään lisätty näkymät pistelistoille, sekä toiminnallisuus ajanotolle. Sekvenssikaavio käyttäjän luomisesta tehty. Käytettävä javaversio vaihdettu java 8:siin ja koodi muokattu sen mukaiseksi.
 26.4 | 12 | Sovellukseen lisätty mahdollisuus vaikeustason valitsemiseen. Satunnaisia lukuja luova RandomNumbers-luokka erotettu Sudoku-luokasta.Testit tehty RandonNumbers-luokalle. Alustava Javadoc ja käyttöohje kirjoitettu.
-Yht:| 24
+Yht:| 36
