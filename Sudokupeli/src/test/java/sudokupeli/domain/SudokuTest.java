@@ -96,8 +96,7 @@ public class SudokuTest {
     }
 
     @Test
-    public void numberAppearsOnceInARowInFilledSudoku() {
-        int[] numbers = new int[9];
+    public void numberAppearsOnceInBoxInFilledSudoku() {
         sudoku.fillTiles();
 
         boolean doesNotAppearTwice = true;
@@ -111,8 +110,6 @@ public class SudokuTest {
         }
 
         assertTrue(doesNotAppearTwice);
-
-        
 
     }
 

@@ -5,7 +5,6 @@
  */
 package sudokupeli.domain;
 
-import java.util.Random;
 
 /**
  *
@@ -15,7 +14,7 @@ public class Sudoku {
 
     private int[][] sudokuGrid;
     private boolean[][] changeableNumbers = new boolean[9][9];
-    private Random rng = new Random();
+    private RandomNumbers rng = new RandomNumbers();
 
     public Sudoku() {
         this.sudokuGrid = new int[9][9];
@@ -110,8 +109,8 @@ public class Sudoku {
         sudokuGrid = new int[9][9];
         fillTiles();
         for (int i = 0; i < 40; i++) {
-            int x = rng.nextInt(9);
-            int y = rng.nextInt(9);
+            int x = rng.getRandomNumber();
+            int y = rng.getRandomNumber();
             sudokuGrid[x][y] = 0;
             changeableNumbers[x][y] = true;
         }
@@ -122,7 +121,7 @@ public class Sudoku {
         int x = coordinates[0];
         int y = coordinates[1];
 
-        int[] randomNumbers = getRandomNumbers();
+        int[] randomNumbers = rng.getRandomNumbers();
 
         if (x == -99) {
             return true;
@@ -143,21 +142,6 @@ public class Sudoku {
         return false;
     }
 
-    public int[] getRandomNumbers() {
-        int[] numbers = new int[9];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i + 1;
-        }
-
-        for (int i = numbers.length - 1; i > 0; i--) {
-            int j = rng.nextInt(i);
-            int previous = numbers[j];
-            numbers[j] = numbers[i];
-            numbers[i] = previous;
-
-        }
-        return numbers;
-    }
 
     public int[][] getSudoku() {
         return this.sudokuGrid;
