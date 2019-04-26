@@ -126,12 +126,12 @@ public class Sudoku {
         return changeableNumbers[x][y];
     }
 
-    public void initializeSudoku() {
+    public void initializeSudoku(int difficulty) {
         sudokuGrid = new int[9][9];
 
         fillTiles();
 
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < difficulty; i++) {
             int x = rng.getRandomNumber();
             int y = rng.getRandomNumber();
             sudokuGrid[x][y] = 0;
