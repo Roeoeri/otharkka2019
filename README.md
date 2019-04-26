@@ -2,6 +2,7 @@
   Työn tarkoituksena on luoda sovellus, jossa käyttäjät voivat pelata sudokua. Käyttäjiä voi olla useita ja heistä jokainen voi luoda nimimerkin sovellukseen pistelistojen tallentamista varten. Sovellus toimii myös kevään 2019 Ohjelmistotekniikka-kurssin harjoitustyönä.
 
   ## Dokumentaatio <h2>
+  [Käyttöohje](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/Kaytto.md)
   
   [Vaatimusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
   
@@ -10,6 +11,8 @@
   [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
   
   ## Releaset <h2>
+  [Viikko6](https://github.com/Roeoeri/otharkka2019/releases/tag/viikko6)
+  
   [Viikko5](https://github.com/Roeoeri/otharkka2019/releases)
   
   ## Oleellisest komentorivikomennot <h2>
