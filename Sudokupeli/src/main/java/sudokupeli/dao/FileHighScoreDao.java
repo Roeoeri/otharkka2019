@@ -72,13 +72,13 @@ public class FileHighScoreDao {
     }
 
     public Player getPlayer(String name) {
-        Player palautus = new Player("");
+        Player player = new Player("");
         for (int i = 0; i < this.highscores.size(); i++) {
             if (this.highscores.get(i).getName().equals(name)) {
-                palautus = this.highscores.get(i);
+                player = this.highscores.get(i);
             }
         }
-        return palautus;
+        return player;
     }
 
     public List<Player> getAll() {
