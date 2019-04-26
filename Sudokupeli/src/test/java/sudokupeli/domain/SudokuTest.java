@@ -40,7 +40,7 @@ public class SudokuTest {
     }
 
     @Test
-    public void constructorCreatesEmptySudokuArray() {
+    public void constructorCreateSudokuArray() {
         int[][] array = sudoku.getSudoku();
         int xLenght = array[0].length;
         int yLenght = array.length;
@@ -73,7 +73,7 @@ public class SudokuTest {
     }
 
     @Test
-    public void numberAppearsOnceInAColumnInFilledSudoku() {
+    public void numberAppearsOnceInAColumnAndRowInFilledSudoku() {
         int[] numbers = new int[9];
 
         boolean doesNotAppearTwice = true;
