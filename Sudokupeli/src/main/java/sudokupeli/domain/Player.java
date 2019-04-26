@@ -11,18 +11,38 @@ package sudokupeli.domain;
  */
 public class Player implements Comparable<Player> {
 
+    /**
+     * Pelaajan nimimerkki
+     */
     private String name;
+    /**
+     * Nopein aika, jossa pelaaja on ratkaissut sudokun
+     */
     private int fastestTime;
 
+    /**
+     * Luo uuden pelaajan halutulla nimimerkillä ja asettaa pelaajalle alustavan
+     * nopeimman ajan.
+     *
+     * @param name pelaajan nimimerkki
+     */
     public Player(String name) {
         this.name = name;
         this.fastestTime = Integer.MAX_VALUE;
     }
 
+    /**
+     *
+     * @return Pelaajan nimimerkki
+     */
     public String getName() {
         return this.name;
     }
-
+    
+    /**
+     * 
+     * @return Pelaajan nopein aika
+     */
     public int getFastestTime() {
         return this.fastestTime;
     }

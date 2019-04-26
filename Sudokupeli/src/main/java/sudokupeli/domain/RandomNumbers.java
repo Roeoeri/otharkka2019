@@ -15,14 +15,26 @@ public class RandomNumbers {
 
     Random rng;
 
+    /**
+     * Alustaa uuden RandomNumbers olion ja sen käyttöön uuden Random olion
+     */
     public RandomNumbers() {
         rng = new Random();
     }
 
+    /**
+     *
+     * @return Satunnainen luku väliltä 0-8
+     */
     public int getRandomNumber() {
         return rng.nextInt(9);
     }
 
+    /**
+     *
+     * @return 9-alkioinen taulukko, jossa on satunnaisessa järjestyksessä luvut
+     * väliltä 1-9
+     */
     public int[] getRandomNumbers() {
         int[] numbers = new int[9];
         for (int i = 0; i < numbers.length; i++) {

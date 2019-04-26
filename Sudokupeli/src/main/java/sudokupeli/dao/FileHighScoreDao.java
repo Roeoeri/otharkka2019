@@ -19,9 +19,23 @@ import sudokupeli.domain.Player;
  */
 public class FileHighScoreDao {
 
+    /**
+     * Tiedosto, johon pistelistat tallennetaan.
+     */
     String file;
+
+    /**
+     * Daon sisäinen pistelista, jonka perusteella dao kirjoittaa tiedostoon.
+     */
     List<Player> highscores;
 
+    /**
+     * Luo uuden daon joka lukee parametrina annetun tiedoston ja alustaa
+     * pistelistan sen perusteella.Mikäli tiedostoa ei ole, Dao luo sellaisen.
+     *
+     * @param file Luettava tiedosto
+     * @throws Exception
+     */
     public FileHighScoreDao(String file) throws Exception {
         this.file = file;
         this.highscores = new ArrayList<>();
@@ -42,6 +56,11 @@ public class FileHighScoreDao {
 
     }
 
+    /**
+     * Tallentaa tiedostoon sovelluksen sisäisen pistelistan
+     *
+     * @throws Exception
+     */
     public void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Player player : this.highscores) {
@@ -50,6 +69,14 @@ public class FileHighScoreDao {
         }
     }
 
+    /**
+     * Lisää pistelistalle pelaajan ja järjestää pelaajat pienimmästä suurinpaan
+     * nopeimpien aikojen perusteella.Mikäli pelaajia on tämän jälkeen yli
+     * kymmenen,poistaa huonoimman pelaajan pistelistalta.
+     *
+     * @param player Lisättävä pelaaja
+     * @throws Exception
+     */
     public void add(Player player) throws Exception {
 
         if (this.highscores.isEmpty() || this.highscores.size() < 10) {
@@ -70,7 +97,11 @@ public class FileHighScoreDao {
         }
 
     }
-
+    /**
+     * Hakee ja palauttaa pistelistala pelaajan parametrina annetun nimen perusteella.
+     * @param name Haettavan pelaajan nimi
+     * @return Plyaer olio
+     */
     public Player getPlayer(String name) {
         Player player = new Player("");
         for (int i = 0; i < this.highscores.size(); i++) {
@@ -80,7 +111,11 @@ public class FileHighScoreDao {
         }
         return player;
     }
-
+    
+    /**
+     * Palauttaa daon sisäisen pistelistan
+     * @return pistelista
+     */
     public List<Player> getAll() {
         return this.highscores;
     }
