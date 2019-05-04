@@ -44,6 +44,7 @@ public class SudokuUi extends Application {
 
     @Override
     public void start(Stage window) {
+        window.setResizable(false);
         VBox welcomeGroup = new VBox(175);
         Scene welcomeView = new Scene(welcomeGroup);
         this.sudoku = new Sudoku();
