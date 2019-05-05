@@ -15,7 +15,8 @@ import sudokupeli.domain.Player;
 
 /**
  *
- * @author htomi
+ * Tarjoaa ominaisuuksia pistelistojen tallentamiseen levyllle, sekä pistelistan
+ * tiedon oikeellisuuden validoimiseen.
  */
 public class FileHighScoreDao {
 
