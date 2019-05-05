@@ -223,7 +223,8 @@ public class Sudoku {
      * nolla.
      */
     public void initializeSudoku(int difficulty) {
-        sudokuGrid = new int[9][9];
+        this.sudokuGrid = new int[9][9];
+        this.changeableNumbers = new boolean[9][9];
 
         fillTiles();
 

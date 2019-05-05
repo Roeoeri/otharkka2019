@@ -5,6 +5,7 @@
  */
 package sudokupeli.domain;
 
+import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -113,12 +114,44 @@ public class SudokuTest {
 
     }
 
+    @Test
+    public void numbersWithValuZeroAreChangeAbleAndOthersAreNot() {
+        Random rng = new Random();
+
+        boolean isCorrectlyChangeAble = true;
+
+        for (int repeatInitialization = 0; repeatInitialization < 10; repeatInitialization++) {
+            sudoku.initializeSudoku(rng.nextInt(70));
+
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    int value = sudoku.getTileValue(i, j);
+                    if (value == 0) {
+                        if (!sudoku.numberCanBeChanged(i, j)) {
+                            isCorrectlyChangeAble = false;
+                        }
+                    }else{
+                        if(sudoku.numberCanBeChanged(i, j)){
+                            isCorrectlyChangeAble = false;
+                        }
+                    }
+                    
+
+                }
+            }
+        }
+        assertTrue(isCorrectlyChangeAble);
+    }
+    
+    
+    
+
     public boolean appearsTwiceInABox(int x, int y) {
         int[] numbers = new int[9];
         boolean doesNotAppearTwice = true;
 
-        for (int i = x-3; i < x; i++) {
-            for (int j= y-3 ; j < y; j++) {
+        for (int i = x - 3; i < x; i++) {
+            for (int j = y - 3; j < y; j++) {
                 int value = sudoku.getTileValue(i, j);
                 numbers[value - 1] += 1;
                 int appearences = numbers[value - 1];
