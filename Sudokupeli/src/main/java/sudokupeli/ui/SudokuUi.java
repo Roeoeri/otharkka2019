@@ -58,9 +58,10 @@ public class SudokuUi extends Application {
 
         Button showLogin = createMenuButton("Pelaa");
         Button showStatistics = createMenuButton("Tilastot");
+        Scene gameScene = createGameScene(window,welcomeView);
 
         showLogin.setOnAction((event) -> {
-            window.setScene(createGameScene(window,welcomeView));
+            window.setScene(gameScene);
 
         });
         
@@ -317,7 +318,7 @@ public class SudokuUi extends Application {
         Slider difficultySlider = new Slider();
         difficultySlider.setMin(10);
         difficultySlider.setMax(70);
-        difficultySlider.setValue(40);
+        difficultySlider.setValue(difficulty);
         difficultySlider.setShowTickLabels(true);
         difficultySlider.setShowTickMarks(true);
         difficultySlider.setMajorTickUnit(30);
