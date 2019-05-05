@@ -11,6 +11,8 @@
   [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
   
   ## Releaset <h2>
+  [Loppupalautus](https://github.com/Roeoeri/otharkka2019/releases/tag/Viikko7)
+  
   [Viikko6](https://github.com/Roeoeri/otharkka2019/releases/tag/viikko6)
   
   [Viikko5](https://github.com/Roeoeri/otharkka2019/releases)
