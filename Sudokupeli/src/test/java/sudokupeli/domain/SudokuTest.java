@@ -130,21 +130,84 @@ public class SudokuTest {
                         if (!sudoku.numberCanBeChanged(i, j)) {
                             isCorrectlyChangeAble = false;
                         }
-                    }else{
-                        if(sudoku.numberCanBeChanged(i, j)){
+                    } else {
+                        if (sudoku.numberCanBeChanged(i, j)) {
                             isCorrectlyChangeAble = false;
                         }
                     }
-                    
 
                 }
             }
         }
         assertTrue(isCorrectlyChangeAble);
     }
-    
-    
-    
+
+    @Test
+    public void solutionIsCorrectWorksAsIntended() {
+        Random rng = new Random();
+
+        boolean checkingWorks = true;
+        this.sudoku.fillTiles();
+
+        checkingWorks = this.sudoku.solutionIsCorrect();
+
+        for (int repeatTest = 0; repeatTest < 1000; repeatTest++) {
+            int[][] mockSudoku = new int[9][9];
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    int value = rng.nextInt(10);
+                    mockSudoku[i][j] = value;
+                }
+            }
+            this.sudoku.setSudoku(mockSudoku);
+
+            if (this.sudoku.solutionIsCorrect()) {
+                checkingWorks = false;
+            }
+
+        }
+
+        assertTrue(checkingWorks);
+
+    }
+
+    @Test
+    public void raisingATileValueWorksAsIntended() {
+        this.sudoku.initializeSudoku(40);
+        Random rng = new Random();
+
+        boolean raisingWorks = true;
+        for (int repeatTest = 0; repeatTest < 10000; repeatTest++) {
+            int x = rng.nextInt(9);
+            int y = rng.nextInt(9);
+            for (int repeatRaise = 0; repeatRaise < 20; repeatRaise++) {
+                int value = this.sudoku.getTileValue(x, y);
+                if (!this.sudoku.numberCanBeChanged(x, y)) {
+                    if (value != this.sudoku.raiseTileValue(x, y)) {
+                        raisingWorks = false;
+                    }
+
+                } else {
+
+                    if (value == 9) {
+                        int raisedValue = this.sudoku.raiseTileValue(x, y);
+                        if (raisedValue != 1) {
+                            raisingWorks = false;
+                        }
+                    } else {
+                        int raisedValue = this.sudoku.raiseTileValue(x, y);
+                        if (raisedValue - value != 1) {
+                            raisingWorks = false;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        assertTrue(raisingWorks);
+    }
 
     public boolean appearsTwiceInABox(int x, int y) {
         int[] numbers = new int[9];
