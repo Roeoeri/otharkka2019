@@ -8,7 +8,7 @@
   
   [Arkkitehtuurikuvaus](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/arkkitehtuuri.md)
   
-  [Testaus](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/testaus.md)
+  [Testausdokumentti](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/testaus.md)
   
   [Tuntikirjanpito](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/tuntikirjanpito.md)
   
