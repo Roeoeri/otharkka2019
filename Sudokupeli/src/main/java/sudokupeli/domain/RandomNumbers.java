@@ -8,8 +8,9 @@ package sudokupeli.domain;
 import java.util.Random;
 
 /**
+ * Tarjoaa sudokun kannalta hyödyllisiä satunnaisia lukuja ja
+ * satunnaislukulistoja.
  *
- * @author htomi
  */
 public class RandomNumbers {
 
