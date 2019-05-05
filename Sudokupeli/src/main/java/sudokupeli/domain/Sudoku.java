@@ -13,16 +13,20 @@ public class Sudoku {
 
     private int[][] sudokuGrid;
 
-    private boolean[][] changeableNumbers = new boolean[9][9];
+    private boolean[][] changeableNumbers;
 
-    private RandomNumbers rng = new RandomNumbers();
+    private RandomNumbers rng;
 
     /**
      * Luo uuden Sudokun ja alustaa uuden 9x9 sudokua kuvaavan numeroruudukon
-     * arvoilla 0.
+     * arvoilla 0 sekä muokattavia numeroita kuvaavan 9*9 booleantaulukon
+     * arvoilla false. Lisäksi alustaa luokan käyttöön uuden
+     * RandomNumbers-olion.
      */
     public Sudoku() {
         this.sudokuGrid = new int[9][9];
+        this.changeableNumbers = new boolean[9][9];
+        this.rng = new RandomNumbers();
     }
 
     /**
