@@ -7,7 +7,7 @@ package sudokupeli.domain;
 
 /**
  *
- * @author htomi
+ * Sudokuluokka tarjoaa ominaisuuksia sudokun luomiseen ja hallinnointiin.
  */
 public class Sudoku {
 
@@ -19,6 +19,7 @@ public class Sudoku {
 
     /**
      * Luo uuden Sudokun ja alustaa uuden 9x9 sudokua kuvaavan numeroruudukon
+     * arvoilla 0.
      */
     public Sudoku() {
         this.sudokuGrid = new int[9][9];
@@ -121,19 +122,19 @@ public class Sudoku {
      *
      * @param x x-koordinaatti
      * @param y y-koordinaatti
-     * @return koordinaateissa sijaitseva luku
+     * @return koordinaateissa sijaitseva arvo
      */
     public int getTileValue(int x, int y) {
         return sudokuGrid[x][y];
     }
 
     /**
-     * Nostaa ruudukossa koordinaateissa x,y sijaitsen ruudun arvoa yhdellä.
+     * Nostaa ruudukossa koordinaateissa x,y sijaitsevan ruudun arvoa yhdellä.
      * Mikäli arvo kasvaa yli yhdeksän, asetetaan arvoksi 1.
      *
      * @param x x-koordinaatti
      * @param y y-koordinaatti
-     * @return ruudussa sijaitseva päivitetty arvo
+     * @return ruudussa sijaitseva arvo sen jälkeen, kun siihen on lisätty 1.
      */
     public int raiseTileValue(int x, int y) {
         if (changeableNumbers[x][y]) {
@@ -150,7 +151,7 @@ public class Sudoku {
     }
 
     /**
-     * Tarkistaa voidaanko ruudukossa koordinaateissa x,y sijaitsevan ruudun
+     * Tarkistaa, voidaanko ruudukossa koordinaateissa x,y sijaitsevan ruudun
      * arvoa vaihtaa.(Eli tarkistaa, ettei ruutu ole esitäytetty)
      *
      * @param x ruudun x-koordinaatti
@@ -165,10 +166,10 @@ public class Sudoku {
     /**
      * Täyttää sudokun satunnaisilla luvuilla, jonka jälkeen asettaa luvun
      * difficulty suuruisen määrän verran satunnaisia ruutuja arvolle nolla ja
-     * määrittää ne muokattaviksi.
+     * asettaa ne muokattaviksi.
      *
      * @param difficulty Luku jonka verran satunnaisia ruutuja asetetaan arvolle
-     * nolla.
+     * nolla ja muokattaviksi.
      */
     public void initializeSudoku(int difficulty) {
         this.sudokuGrid = new int[9][9];
@@ -214,6 +215,7 @@ public class Sudoku {
     }
 
     /**
+     * Palauttaa sudokuruudukon 9*9 kaksiulotteisena numerotaulukkona
      *
      * @return sudokuruudukko kaksiulotteisena 9x9 numerotaulukkona
      */
@@ -222,7 +224,7 @@ public class Sudoku {
     }
 
     /**
-     * Asettaa sudokun arvoksi parametrina annetun sudokun
+     * Asettaa sudokun arvoksi parametrina annetun 9x9 numerotaulukon.
      *
      * @param sudoku
      */
