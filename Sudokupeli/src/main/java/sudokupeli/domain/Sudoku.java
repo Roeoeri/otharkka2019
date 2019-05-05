@@ -11,19 +11,10 @@ package sudokupeli.domain;
  */
 public class Sudoku {
 
-    /**
-     * Kaksiulotteinen 9x9 taulukko, joka kuvastaa sudokupelin ruutuja.
-     */
     private int[][] sudokuGrid;
-    /**
-     * Kaksiulotteinen 9x9 taulukko, joka kuvastaa sudokupelin ruutuja, jotka
-     * eivätä ole esitäyttetyjä eli käyttäjän muokattavissa.
-     */
+
     private boolean[][] changeableNumbers = new boolean[9][9];
-    /**
-     * RandomNumbers luokan olio, joka tarjoaa mahdollisuuden satunnaisen luvun
-     * tai lukulistan arpomiseen
-     */
+
     private RandomNumbers rng = new RandomNumbers();
 
     /**
@@ -58,17 +49,7 @@ public class Sudoku {
         return true;
     }
 
-    /**
-     * Tarkistaa voidaanko lukua value sijoittaa lukujen x ja y määrittämiin
-     * koordinaatteihin
-     *
-     * @param x ruudun x-koordinaatti
-     * @param y ruudun y-koordinaatti
-     * @param value luku joka yritetään sijoittaa koordinaatteihin
-     *
-     * @return True jos luku voidaan sijoittaa koordinaatteihin, muutoin false
-     */
-    public boolean numberCanBePlaced(int x, int y, int value) {
+    private boolean numberCanBePlaced(int x, int y, int value) {
 
         if (rowHasANumber(x, value)) {
             return false;
@@ -85,17 +66,7 @@ public class Sudoku {
         return true;
     }
 
-    /**
-     * Tarkistaa onko 3x3 ruudukossa, jossa ruutu koordinaateilla x,y sijaitsee,
-     * lukua value.
-     *
-     * @param x ruudun x-koordinaatti
-     * @param y ruudun y-koordinaatti
-     * @param value tarkistettava luku
-     * @return True, jos ruudukossa sijaitsee jo sama luku kuin value. Muutoin
-     * false.
-     */
-    public boolean boxHasANumber(int x, int y, int value) {
+    private boolean boxHasANumber(int x, int y, int value) {
         int squareXLimit = 3 * Math.floorDiv(x, 3);
         int squareYLimit = 3 * Math.floorDiv(y, 3);
 
@@ -109,14 +80,7 @@ public class Sudoku {
         return false;
     }
 
-    /**
-     * Tarkistaa onko rivillä koordinaatilla x, lukua value
-     *
-     * @param x rivin koordinaatti
-     * @param value tarkistettava luku
-     * @return True, jos rivillä on jo sama luku kuin value. Muutoin false.
-     */
-    public boolean rowHasANumber(int x, int value) {
+    private boolean rowHasANumber(int x, int value) {
         for (int i = 0; i < 9; i++) {
             if (sudokuGrid[x][i] == value) {
                 return true;
@@ -125,14 +89,7 @@ public class Sudoku {
         return false;
     }
 
-    /**
-     * Tarkistaa onko rivillä koordinaatilla y, lukua value
-     *
-     * @param y rivin y koordinaatti
-     * @param value tarkistettava luku
-     * @return True jos rivillä on jo sama luku kuin value. Muutoin false.
-     */
-    public boolean columnHasANumber(int y, int value) {
+    private boolean columnHasANumber(int y, int value) {
         for (int i = 0; i < 9; i++) {
             if (sudokuGrid[i][y] == value) {
                 return true;
@@ -141,16 +98,7 @@ public class Sudoku {
         return false;
     }
 
-    /**
-     * Palauttaa seuraavan vapaan ruudun (eli ruudun jonka arvo on 0)
-     * koordinaatit kaksialkioisena taulukkona, jossa ensinmäinen alkio on
-     * x-koordinaatti ja toinen y-koordinaatti
-     *
-     * @return Kaksialkioinen taulukko coordinates, jossa ensinmäinen alkio on
-     * x-koordinaatti ja toinen y-koordinaatti. Mikäli sudokussa ei ole enää
-     * vapaata ruutua,x ja y koordinaattien arvoksi asetetaan -99.
-     */
-    public int[] getEmptyTile() {
+    private int[] getEmptyTile() {
         int[] coordinates = new int[2];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
