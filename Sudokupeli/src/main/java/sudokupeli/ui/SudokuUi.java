@@ -47,7 +47,7 @@ public class SudokuUi extends Application {
         window.setResizable(false);
         VBox welcomeGroup = new VBox(175);
         Scene welcomeView = new Scene(welcomeGroup);
-        this.sudoku = new Sudoku();
+       
 
         welcomeGroup.setPrefSize(745, 780);
         welcomeGroup.setPadding(new Insets(50, 260, 50, 260));
@@ -159,6 +159,7 @@ public class SudokuUi extends Application {
                 return;
             }
             this.currentPlayer = new Player(username);
+            this.sudoku = new Sudoku();
             this.sudoku.initializeSudoku(difficulty);
 
             sudokuGroup.setBottom(drawSudoku());
