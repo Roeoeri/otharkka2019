@@ -19,24 +19,17 @@ import sudokupeli.domain.Player;
  */
 public class FileHighScoreDao {
 
-    /**
-     * Tiedosto, johon pistelistat tallennetaan.
-     */
-    String file;
+    private String file;
 
-    /**
-     * Daon sisäinen pistelista, jonka perusteella dao kirjoittaa tiedostoon.
-     */
-    List<Player> highscores;
+    private List<Player> highscores;
 
     /**
      * Luo uuden daon joka lukee parametrina annetun tiedoston ja alustaa
      * pistelistan sen perusteella.Mikäli tiedostoa ei ole, Dao luo sellaisen.
      *
      * @param file Luettava tiedosto
-     * @throws Exception
      */
-    public FileHighScoreDao(String file) throws Exception {
+    public FileHighScoreDao(String file) {
         this.file = file;
         this.highscores = new ArrayList<>();
         try {
@@ -50,34 +43,39 @@ public class FileHighScoreDao {
                 this.highscores.add(player);
             }
         } catch (Exception e) {
-            FileWriter writer = new FileWriter(new File(file));
-            writer.close();
+            try {
+                FileWriter writer = new FileWriter(new File(file));
+                writer.close();
+            } catch (Exception ex) {
+
+            }
         }
 
     }
 
     /**
-     * Tallentaa tiedostoon sovelluksen sisäisen pistelistan
+     * Tallentaa tiedostoon daon sisäisen pistelistan
      *
-     * @throws Exception
      */
-    public void save() throws Exception {
+    public void save() {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Player player : this.highscores) {
                 writer.write(player.getName() + ":" + player.getFastestTime() + "\n");
             }
+        } catch (Exception e) {
+
         }
     }
 
     /**
-     * Lisää pistelistalle pelaajan ja järjestää pelaajat pienimmästä suurinpaan
+     * Lisää pistelistalle pelaajan ja järjestää pelaajat pienimmästä suurimpaan
      * nopeimpien aikojen perusteella.Mikäli pelaajia on tämän jälkeen yli
-     * kymmenen,poistaa huonoimman pelaajan pistelistalta.
+     * kymmenen,poistaa huonoimman pelaajan pistelistalta. Tämän pistelista
+     * tallennetaan tiedostoon.
      *
      * @param player Lisättävä pelaaja
-     * @throws Exception
      */
-    public void add(Player player) throws Exception {
+    public void add(Player player) {
 
         if (this.highscores.isEmpty() || this.highscores.size() < 10) {
             this.highscores.add(player);
@@ -97,10 +95,13 @@ public class FileHighScoreDao {
         }
 
     }
+
     /**
-     * Hakee ja palauttaa pistelistala pelaajan parametrina annetun nimen perusteella.
-     * @param name Haettavan pelaajan nimi
-     * @return Plyaer olio
+     * Hakee ja palauttaa pistelistala pelaajan parametrina annetun nimen
+     * perusteella.
+     *
+     * @param name Haettavan pelaajan nimi.
+     * @return Pelaajaa vastaava Player-olio.
      */
     public Player getPlayer(String name) {
         Player player = new Player("");
@@ -111,9 +112,10 @@ public class FileHighScoreDao {
         }
         return player;
     }
-    
+
     /**
-     * Palauttaa daon sisäisen pistelistan
+     * Palauttaa daon sisäisen pistelistan.
+     *
      * @return pistelista
      */
     public List<Player> getAll() {

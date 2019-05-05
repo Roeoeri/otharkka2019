@@ -10,53 +10,51 @@ import sudokupeli.dao.FileHighScoreDao;
 
 /**
  *
- * @author htomi
+ * Tarjoaa ominaisuuksia pistelistojen hallinnointiin.
  */
 public class HighscoreList {
 
-    /**
-     * Lista jossa säilytetään pelaajien nopeimpia ratkaisuaikoja
-     */
     private List<Player> highscore;
-    /**
-     * Dao joka huolehtii pelaajien tallentamisesta
-     */
+
     private FileHighScoreDao scoreDao;
 
     /**
-     * Luo uuden pistelistan, joka käyttää parametrina annettua daoa.
+     * Luo uuden pistelistan, joka käyttää parametrina annettua daoa pistelistan
+     * tallentamiseen levylle.
      *
      * @param dao Dao joka huolehtii pelaajien tallentamisesta
-     * @throws Exception
      */
-    public HighscoreList(FileHighScoreDao dao) throws Exception {
+    public HighscoreList(FileHighScoreDao dao) {
         this.scoreDao = dao;
-        this.highscore = scoreDao.getAll();
+        try {
+            this.highscore = scoreDao.getAll();
+        } catch (Exception e) {
+
+        }
     }
 
     /**
-     * Lisää pistelistalle uuden pelaajan.
+     * Lisää pistelistalle uuden pelaajan, eli uuden Player-olion.
      *
      * @param player lisättävä pelaaja
-     * @throws Exception
      */
-    public void addPlayer(Player player) throws Exception {
+    public void addPlayer(Player player) {
         scoreDao.add(player);
         updateRanking();
     }
 
     /**
      *
-     * @return palauttaa pistelistan
+     * @return Palauttaa pistelistan Player olioiden listana.
      */
     public List<Player> asList() {
         return this.highscore;
     }
 
     /**
-     * Palauttaa listalla olevan pelaajan nimen perusteella
+     * Palauttaa listalla olevan Player-olion pelaajan nimen perusteella
      *
-     * @param name pelaajan nimi
+     * @param name Haettavan pelaajan nimi
      * @return Player olio
      */
     public Player getPlayer(String name) {
