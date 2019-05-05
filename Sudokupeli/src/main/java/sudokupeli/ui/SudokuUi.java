@@ -165,8 +165,6 @@ public class SudokuUi extends Application {
 
             window.setScene(sudokuView);
 
-            System.out.println(window.getWidth());
-            System.out.println(window.getHeight());
 
             clock.start();
             userTimeAnimator = new AnimationTimer() {
@@ -218,13 +216,13 @@ public class SudokuUi extends Application {
                 clock.stop();
                 clock.reset();
                 currentPlayer.setTime(time);
+                String error = "";
                 try {
                     this.highscores.addPlayer(currentPlayer);
                 } catch (Exception e) {
-                    System.out.println(e);
+                    error = "Aikasi lisäämisessä tapahtui virhe, aikaasi ei välttämättä tallenneta";
                 }
-                playerInfo.setText("Oikein, peli päättyy");
-                window.setScene(createCorrectAnswerScene(window,loginView));
+                window.setScene(createCorrectAnswerScene(window,loginView, error));
             } else {
                 playerInfo.setText("Väärin, yritä uudestaan");
             }
@@ -234,7 +232,7 @@ public class SudokuUi extends Application {
         return loginView;
     }
 
-    public Scene createCorrectAnswerScene(Stage window, Scene nextView) {
+    public Scene createCorrectAnswerScene(Stage window, Scene nextView, String error) {
         VBox correctAnswerGroup = new VBox(175);
         correctAnswerGroup.setPrefSize(745, 780);
         correctAnswerGroup.setPadding(new Insets(50, 175, 50, 175));
@@ -250,6 +248,7 @@ public class SudokuUi extends Application {
         });
         
         correctAnswerGroup.getChildren().add(welcomeTitle);
+        correctAnswerGroup.getChildren().add(new Label(error));
         correctAnswerGroup.getChildren().add(playAgain);
         
 
