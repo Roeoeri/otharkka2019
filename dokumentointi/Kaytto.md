@@ -2,7 +2,7 @@
   
 ## Lataaminen <h2>
 
-[Pelin voi ladata täälä](https://github.com/Roeoeri/otharkka2019/releases/tag/viikko7)
+[Pelin voi ladata täälä](https://github.com/Roeoeri/otharkka2019/releases/tag/Viikko7)
 
 ## Konfigurointi <h2>
 
