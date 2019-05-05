@@ -6,23 +6,18 @@
 package sudokupeli.domain;
 
 /**
+ * Tarjoaa ominaisuuksia sudokupelaajan hallinnointiin.
  *
- * @author htomi
  */
 public class Player implements Comparable<Player> {
 
-    /**
-     * Pelaajan nimimerkki
-     */
     private String name;
-    /**
-     * Nopein aika, jossa pelaaja on ratkaissut sudokun
-     */
+
     private int fastestTime;
 
     /**
      * Luo uuden pelaajan halutulla nimimerkillä ja asettaa pelaajalle alustavan
-     * nopeimman ajan.
+     * nopeimman ajan arvoksi Integer.MAX_VALUE.
      *
      * @param name pelaajan nimimerkki
      */
@@ -38,15 +33,20 @@ public class Player implements Comparable<Player> {
     public String getName() {
         return this.name;
     }
-    
+
     /**
-     * 
+     *
      * @return Pelaajan nopein aika
      */
     public int getFastestTime() {
         return this.fastestTime;
     }
 
+    /**
+     * Asettaa pelaajan nopeimmaksi ajaksi parametrina annetun ajan.
+     *
+     * @param time luku, joka halutaan asettaa pelaajan nopeimmaksi ajaksi.
+     */
     public void setTime(int time) {
         if (time < this.fastestTime && time >= 0) {
             this.fastestTime = time;
