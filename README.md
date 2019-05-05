@@ -4,7 +4,7 @@
   ## Dokumentaatio <h2>
   [Käyttöohje](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/Kaytto.md)
   
-  [Vaatimusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/alustavaMaarittelyDokumentti.md)
+  [Vaatimusmäärittely](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/Maarittelydokumentti.md)
   
   [Arkkitehtuurikuvaus](https://github.com/Roeoeri/otharkka2019/blob/master/dokumentointi/arkkitehtuuri.md)
   
