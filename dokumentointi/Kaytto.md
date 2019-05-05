@@ -2,7 +2,7 @@
   
 ## Lataaminen <h2>
 
-[Pelin voi ladata täälä](https://github.com/Roeoeri/otharkka2019/releases/tag/viikko6)
+[Pelin voi ladata täälä](https://github.com/Roeoeri/otharkka2019/releases/tag/viikko7)
 
 ## Konfigurointi <h2>
 
@@ -13,7 +13,7 @@ Peli olettaa, että sen suoritushakemistosta löytyy tiedosto highscores.txt. Mi
 ## Pelin käynnistäminen <h2>
 Kun peli on ladattu ja tallennettu haluttuun paikkaan, navigoi komentorivillä hakemistoon, johon peli on tallennettu. Tämän jälkeen pelin avaaminen onnistuu komennolla: 
   
-  `java -jar SudokupeliViikko6.jar`
+  `java -jar SudokupeliFinal.jar `
   
 ## Aloitusvalikko <h2>
   Pelin käynnistymisen jälkeen avautuu valikko, jossa on kaksi nappia "Pelaa" ja "Tilastot".
