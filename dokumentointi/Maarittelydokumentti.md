@@ -7,26 +7,32 @@ Työn tarkoituksena on luoda sovellus, jossa käyttäjät voivat pelata sudokua.
 Sovelluksessa on vain yksi käyttäjärooli: normaali käyttäjä.
 
 ## Perusversion tarjoama toiminnallisuus <h2>
-## Nimimerkin luominen ja kirjautuminen <h3>
+
+### Aloitusvalikko <h3>
+  - Aloitusvalikossa pelaajaa pyydetään valitsemaan, haluaako hän tarkastella muiden pelaajien pisteitä vai pelata sudokua.
+  
+### Pistelista <h3>
+  - Jos käyttäjä valitsee pistelistan, hänelle näytetään listana 10 jonkin sudokun nopeimmin ratkaissutta pelaajaa
+  - Pistelistasta on mahdollista palata takaisin päävalikkoon.
+  
+### Nimimerkin ja pelin luominen <h3>
 
 - Käyttäjältä pyydetään lomakkeella nimimerkkiä.
 - Nimimerkki voi olla vähintään yhden merkin pituinen ja enintään kahdeksan merkin pituinen.
-- Nimimerkin luomisen jälkeen käyttäjä kirjautuu sovellukseen valitsemallaan nimimerkillä.
+- Käyttäjää pyydetään valitsemaan sudokun vaikeustaso liukukytkimellä.
+- Nimimerkin luomisen ja vaikeustason valinnan jälkeen käyttäjä aloittaa sudokun valitsemallaan nimimerkillä.
 
-## Kirjautumisen jälkeen <h3>
+### Sudoku <h3>
 
-- Käyttäjälle annetaan ratkaistavaksi jokin sovelluksen luoma sudoku.
+- Käyttäjälle annetaan ratkaistavaksi hänen antamansa vaikeustason mukaisesti jokin sovelluksen luoma sudoku.
 - Sudokun aloittaminen käynnistää kellon, joka kertoo, kuinka kauan käyttäjä on yrittänyt sudokun ratkaisua. Kello on nähtävissä ruudulla sudokun vieressä ja kellon aikaa käytetään myöhemmin pistetaulukon muodostamisessa.
-- Ratkaistavan sudokun vieressä käyttäjälle näytetään myös pistetaulukko, jossa näytetään enintään 10 sudokun nopeimmin ratkaissutta käyttäjää.
 - Kun käyttäjä on saanut sudokun ratkaistua, hänen aikansa talletetaan pistetaulukkoon ja sovellus antaa hänelle uuden sudokun ratkaistavaksi.
-- Käyttäjällä on myös koko ajan mahdollisuus lopettaa sudokujen ratkaiseminen ja kirjautua ulos sovelluksesta.
+- Käyttäjällä on myös koko ajan mahdollisuus lopettaa sudokujen ratkaiseminen ja palata aloitusruutuun.
 
 ## Jatkokehitysideoita <h2>
 
-- Kirjautumisen jälkeen käyttäjälle tarjotaan kaksi erilaista sudokua: helppo ja vaikea. 
-- Helpossa sudokussa on huomattavasti enemmän valmiiksi täytettyjä ruutuja kuin vaikeassa.
-- Helpolle ja vaikealle sudokulle on erikseen omat pistelistansa. 
-- Jos käyttäjä ei keksi sudokulle ratkaisua, hänelle tarjotaan mahdollisuus luovuttaa. Mikäli käyttäjä luovuttaa, sovellus näyttää käyttäjälle sudokun ratkaisun.
+- Sudokuille omat pistelistat sudokun vaikeustason mukaan.
+- Jos käyttäjä lopettaa sudokun ratkaisemisen, hänelle tarjotaan mahdollisuus nähdä sudokun oikea ratkaisu. 
 
 
 
