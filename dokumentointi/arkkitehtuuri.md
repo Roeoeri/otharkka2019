@@ -18,7 +18,7 @@ Ohjelmassa ovat seuraavat näkymät:
 - Sudoku
 - Sudoku ratkaistu
 
-Jokaista näkymää vastaa oma Scene-olionsa, jotka piirretään vuorollaan Stage-luokan setScene() metodilla. Ui on saatu melko hyvin eristettyä sovelluslogiikasta ja käytänössä Ui:n ainoaksi tehtäväksi jää piirtää käyttöliittymää sovelluslogiikan antaman datan perusteella. 
+Jokaista näkymää vastaa oma Scene-olionsa, jotka piirretään vuorollaan Stage-luokan setScene() metodilla. Ui on saatu melko hyvin eristettyä sovelluslogiikasta ja käytänössä Ui:n ainoaksi tehtäväksi jää piirtää käyttöliittymää sovelluslogiikan antaman datan perusteella (edellä mainitun Daon luomisen lisäksi).
 
 ## Sovelluslogiikka <h2>
 
